@@ -21,6 +21,8 @@ script:
         evm config path /tmp
     fi
     evm install emacs-${EMACS_VERSION} --use --skip
+  - emacs --version
+  - emacs -nw -batch --eval '(message module-file-suffix)'
   - cd $TRAVIS_BUILD_DIR
   - make
   - make test
